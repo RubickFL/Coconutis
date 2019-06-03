@@ -1,2 +1,2 @@
 # Coconutis
-VB powered programming languange
+VM powered programming languange
