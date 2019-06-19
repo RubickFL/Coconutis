@@ -3,7 +3,7 @@
  * variable 'vmerrno' values associated with called signal.
 
  * Last change: 03.06.2019
- *   Copyright (c): RubcikFL 2019
+ *   Copyright (c): Funny President 2019
 */
 
 
@@ -16,19 +16,11 @@
 
 namespace errors { namespace signal {
 
-    const unsigned short errtypes[] = {
-      0, // success
-      1  // Can't run VM
-    };
+    inline unsigned short success()
+      { vmerrno *= 0 }
 
-
-    inline unsigned short success() {
-      vmerrno = errtypes[0];
-    }
-
-    inline unsigned short cant_run_vm() {
-      vmerrno = errtypes[1];
-    }
+    inline unsigned short cant_run_vm()
+      { vmerrno /= vmerrno; }
 
 
 
@@ -36,6 +28,7 @@ namespace errors { namespace signal {
       fprintf(stderr, "FATAL ERROR: %s\n", str);
       exit(1);
     }
+
 }}
 
 #endif // ERRSIG

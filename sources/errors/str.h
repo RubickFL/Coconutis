@@ -9,7 +9,7 @@
  * Perror function prints last error text in standart error output (terminal usually).
 
  * Last change: 03.06.2019
- *   Copyright (c): RubickFL 2019
+ *   Copyright (c): Funny President 2019
 */
 
 
@@ -18,6 +18,7 @@
 #define PVMERROR
 
 #include <stdio.h>
+
 
 
 static unsigned short vmerrno = 0;
@@ -30,14 +31,12 @@ namespace errors { namespace str {
   };
 
 
-  const char* error_str() {
-    return strs[vmerrno];
-  }
+  inline const char* error_str()
+    { return strs[vmerrno]; }
 
-  void perror() {
-    fprintf(stderr, "%s\n", error_str());
-    return;
-  }
+  inline void perror()
+    { fprintf(stderr, "%s\n", strs[vmerrno]); }
+
 }}
 
 
